@@ -1,2 +1,3 @@
-name: <+stage.variables.resourceNamePrefix>
-image: <+pipeline.variables.registry>/+pipeline.variables.repo>:<+pipeline.variables.tag>
+name: testinf
+image: <+artifact.image>
+dockercfg: <+artifact.imagePullSecret>
