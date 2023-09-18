@@ -11,6 +11,12 @@ spec:
       containers:
         - name: {{.Values.name}}-container
           image: {{.Values.image}}
-          command: ["/bin/sh","-c","echo hello"]
+          command: 
+            - /bin/sh
+            - -c
+            - |
+              echo hello
+              sleep 30
+              echo world
       restartPolicy: Never
   backoffLimit: 4
