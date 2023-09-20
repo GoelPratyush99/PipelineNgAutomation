@@ -16,7 +16,7 @@ spec:
             - -c
             - |
               echo hello
-              sleep 60
+              sleep 90
               echo world
       restartPolicy: Never
   backoffLimit: 4
