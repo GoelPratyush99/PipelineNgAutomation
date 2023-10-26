@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: {{.Values.name}}-ss
-  release: {{ .Release.Name }}
+  release: "{{ .Release.Name }}"
 spec:
   selector:
     matchLabels:
