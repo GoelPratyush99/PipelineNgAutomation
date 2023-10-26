@@ -5,6 +5,8 @@ metadata:
   name: {{.Values.name}}-deployment
   labels:
     app: {{.Values.name}}
+    release: {{ .Release.Name }}
+    harness.io/release: {{ .Release.Name }}
     type: front-end
 spec:
   template:
@@ -12,6 +14,8 @@ spec:
       name: {{.Values.name}}
       labels:
         app: {{.Values.name}}
+        release: {{ .Release.Name }}
+        harness.io/release: {{ .Release.Name }}
         type: front-end
     spec:
       imagePullSecrets:
@@ -22,4 +26,6 @@ spec:
   replicas: 1
   selector:
     matchLabels:
+      release: {{ .Release.Name }}
+      harness.io/release: {{ .Release.Name }}
       type: front-end
