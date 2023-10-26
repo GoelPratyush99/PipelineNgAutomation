@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: {{ template "todolist.fullname" . }}-ss
-  serviceName: {{ template "todolist.fullname" . }}-svc 
+  serviceName: {{ template "todolist.fullname" . }}
   replicas: 1
   minReadySeconds: 10 # by default is 0
   template:
