@@ -14,7 +14,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{.Values.name}}-ss
+        app: {{ template "todolist.fullname" . }}-ss
     spec:
       terminationGracePeriodSeconds: 10
       containers:
