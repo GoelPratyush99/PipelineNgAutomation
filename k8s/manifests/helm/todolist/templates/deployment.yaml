@@ -51,6 +51,7 @@ spec:
     metadata:
       labels:
         app: {{ template "todolist.name" . }}
+        release: {{ .Release.Name }}
     spec:
       {{- if .Values.dockercfg}}
       imagePullSecrets:
