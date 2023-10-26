@@ -1,19 +1,22 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: {{.Values.name}}-ss
-  release: "{{ .Release.Name }}"
+  app: todolist
+  chart: 0.2.0
+  release: {{ .Release.Name }}
+  harness.io/release: {{ .Release.Name }}
+  heritage: {{ .Release.Service }}
 spec:
   selector:
     matchLabels:
-      app: {{.Values.name}}-ss
+      app: todolist
   serviceName: {{.Values.name}}-svc 
   replicas: 1
   minReadySeconds: 10 # by default is 0
   template:
     metadata:
       labels:
-        app: {{.Values.name}}-ss
+        app: todolist
     spec:
       terminationGracePeriodSeconds: 10
       containers:
