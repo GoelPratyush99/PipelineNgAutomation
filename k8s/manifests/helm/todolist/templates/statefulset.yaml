@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: {{.Values.name}}-ss
+  name: {{ template "todolist.fullname" . }}-ss
   labels:
     release: {{ .Release.Name }}
 spec:
   selector:
     matchLabels:
-      app: {{.Values.name}}-ss
-  serviceName: {{.Values.name}}-svc 
+      app: {{ template "todolist.fullname" . }}-ss
+  serviceName: {{ template "todolist.fullname" . }}-svc 
   replicas: 1
   minReadySeconds: 10 # by default is 0
   template:
